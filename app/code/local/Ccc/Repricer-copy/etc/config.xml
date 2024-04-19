@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+
+<config>
+
+    <modules>
+        <Ccc_Repricer>
+            <version>1.6.0.1</version>
+        </Ccc_Repricer>
+    </modules>
+
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <Ccc_Repricer before="Mage_Adminhtml">Ccc_Repricer_Adminhtml</Ccc_Repricer>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers> 
+    </admin>
+
+    <adminhtml>
+        <layout>
+            <updates>
+                <repricer>
+                    <file>ccc_repricer.xml</file>
+                </repricer>
+            </updates>
+        </layout>
+    </adminhtml>
+
+    <global>
+        <blocks>
+            <repricer>
+                <class>Ccc_Repricer_Block</class>
+            </repricer>
+        </blocks>
+        <helpers>
+            <repricer>
+                <class>Ccc_Repricer_Helper</class>
+            </repricer>
+        </helpers>
+        <models>
+            <repricer>
+                <class>Ccc_Repricer_Model</class>
+                <resourceModel>repricer_resource</resourceModel>
+            </repricer>
+            <repricer_resource>
+                <class>Ccc_Repricer_Model_Resource</class>
+                <entities>
+                    <competitor>
+                        <table>ccc_repricer_competitor</table>
+                    </competitor>
+                    <matching>
+                        <table>ccc_repricer_matching</table>
+                    </matching>
+                </entities>
+            </repricer_resource>
+        </models>
+        <resources>
+            <repricer_setup>
+                <setup>
+                    <module>Ccc_Repricer</module>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </repricer_setup>
+        </resources>
+    </global>
+</config>

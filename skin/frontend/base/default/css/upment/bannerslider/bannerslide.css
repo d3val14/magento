@@ -1,0 +1,53 @@
+
+.mySlides {display: none;}
+/* Fading animation */
+.fade-banner {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+.leftslide-banner {
+    position: relative;
+    left: -100%;
+    -webkit-animation: slide 1.5s forwards;
+    -webkit-animation-delay: 0s;
+    animation: slide 1.5s forwards;
+    animation-delay: 0s;
+}
+
+@-webkit-keyframes slide {
+    100% { left: 0; }
+}
+
+@keyframes slide {
+    100% { left: 0; }
+}
+
+.rightslide-banner {
+    position: relative;
+    left: +100%;
+    -webkit-animation: slide 1.5s forwards;
+    -webkit-animation-delay: 0s;
+    animation: slide 1.5s forwards;
+    animation-delay: 0s;
+}
+
+@-webkit-keyframes slide {
+    100% { left: 0; }
+}
+
+@keyframes slide {
+    100% { left: 0; }
+}

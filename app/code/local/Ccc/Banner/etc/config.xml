@@ -1,0 +1,90 @@
+<?xml version="1.0"?>
+
+<config>
+
+    <modules>
+        <Ccc_Banner>
+            <version>1.6.0.0.1</version>
+        </Ccc_Banner>
+    </modules>
+
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <Ccc_Banner before="Mage_Adminhtml">Ccc_Banner_Adminhtml</Ccc_Banner>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers> 
+    </admin>
+
+    <adminhtml>
+        <layout>
+            <updates>
+                <banner>
+                    <file>banner.xml</file>
+                </banner>
+            </updates>
+        </layout>
+    </adminhtml>
+
+    <global>
+        <blocks>
+            <banner>
+                <class>Ccc_Banner_Block</class>
+            </banner>
+        </blocks>
+        <helpers>
+            <banner>
+                <class>Ccc_Banner_Helper</class>
+            </banner>
+        </helpers>
+        <models>
+            <banner>
+                <class>Ccc_Banner_Model</class>
+                <resourceModel>banner_resource</resourceModel>
+            </banner>
+            <banner_resource>
+                <class>Ccc_Banner_Model_Resource</class>
+                <entities>
+                    <banner>
+                        <table>ccc_banner</table>
+                    </banner>
+                </entities>
+            </banner_resource>
+        </models>
+        <resources>
+            <banner_setup>
+                <setup>
+                    <module>Ccc_Banner</module>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </banner_setup>
+        </resources>
+    </global>
+
+    <crontab>
+        <jobs>
+            <banner_cron>
+                <schedule>
+                    <cron_expr>*/5 * * * *</cron_expr> <!-- Runs every 5 minutes -->
+                </schedule>
+                <run>
+                    <model>banner/observer::executeCron</model>
+                </run>
+            </banner_cron>
+            <banner_cron1>
+                <schedule>
+                    <cron_expr>*/5 * * * *</cron_expr> <!-- Runs every 5 minutes -->
+                </schedule>
+                <run>
+                    <model>banner/observer::executeCron2</model>
+                </run>
+            </banner_cron1>
+        </jobs>
+    </crontab>
+</config>

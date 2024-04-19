@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+
+<config>
+    <menu>
+        <catalog>
+            <children>
+                <repricer translate="title" module="repricer">
+                    <title>Repricer</title>
+                    <sort_order>100</sort_order>
+                    <children>
+                        <competitor translate="title" module="repricer">
+                            <title>Manage Competitor</title>
+                            <action>adminhtml/competitor</action>
+                            <sort_order>0</sort_order>
+                        </competitor>
+                        <repricer translate="title" module="repricer">
+                            <title>Manage Repricer</title>
+                            <action>adminhtml/matching</action>
+                            <sort_order>0</sort_order>
+                        </repricer>
+                    </children>
+                </repricer>
+            </children>
+        </catalog>
+    </menu>
+</config>

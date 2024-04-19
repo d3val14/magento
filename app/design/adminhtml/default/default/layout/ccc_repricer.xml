@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+
+<layout>
+    <adminhtml_competitor_index>
+        <reference name="content">
+            <block type="repricer/adminhtml_competitor" name="competitor" />
+        </reference>
+    </adminhtml_competitor_index>
+    <!-- <adminhtml_competitor_new>
+        <update handle="repricer/adminthtml_competitor_edit" />
+    </adminhtml_competitor_new> -->
+    <adminhtml_competitor_edit>
+        <reference name="content">
+            <block type="repricer/adminhtml_competitor_edit" name="competitor_edit" />
+        </reference>
+    </adminhtml_competitor_edit>
+    <adminhtml_matching_index>
+        <reference name="content">
+            <block type="repricer/adminhtml_matching" name="matching" />
+        </reference>
+    </adminhtml_matching_index>
+    <adminhtml_matching_new>
+        <update handle="repricer/adminthtml_matching_edit" />
+    </adminhtml_matching_new>
+    <adminhtml_matching_edit>
+        <reference name="content">
+            <block type="repricer/adminhtml_matching_edit" name="matching_edit" />
+        </reference>
+    </adminhtml_matching_edit>
+</layout>
